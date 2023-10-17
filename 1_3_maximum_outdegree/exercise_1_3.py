@@ -1,8 +1,10 @@
 import sys
 from collections import Counter
 
+from util import read_graph_file
 
-def main():
+
+def exercise_1_3():
     filename = sys.argv[1]
     _, edges = read_graph_file(filename)
 
@@ -14,13 +16,5 @@ def main():
     print('Vertices with maximum out-degree:', sorted(vertices_with_max_out_degree))
 
 
-def read_graph_file(filename):
-    with open(filename, 'r') as file:
-        content = file.read().splitlines()
-    number_of_vertices = int(content[0])
-    edges = [tuple(int(edge) for edge in line.split(' ')) for line in content[1:]]
-    return number_of_vertices, edges
-
-
 if __name__ == '__main__':
-    main()
+    exercise_1_3()
